@@ -25,7 +25,11 @@ $(document).ready(function(){
 		
 		$("a").each(function(){
 			url= $(this).attr("href");
+			if (url.indexOf("?") > -1){
+			url= url+ "&" + mkto_cookie;
+			}else{
 			url= url+ "?" + mkto_cookie;
+			}
 		    $(this).attr("href", url);
 			
 		});
